@@ -4,7 +4,8 @@
   "description": "Production-ready Website Screenshot API using Puppeteer on Vercel",
   "main": "api/screenshot.ts",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "node dev-server.js",
+    "dev:vercel": "vercel dev",
     "deploy": "vercel --prod"
   },
   "keywords": [
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@types/node": "^20.10.5",
     "@vercel/node": "^3.0.12",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "vercel": "^33.0.1"
   }

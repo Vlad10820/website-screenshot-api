@@ -98,7 +98,7 @@ curl "https://your-domain.vercel.app/api/screenshot?url=https://github.com" --ou
 
 ### Setup
 
-1. **Clone the repository**
+1. **Navigate to the project directory**
    ```bash
    cd website-screenshot-api
    ```
@@ -108,22 +108,33 @@ curl "https://your-domain.vercel.app/api/screenshot?url=https://github.com" --ou
    npm install
    ```
 
-3. **Install Vercel CLI** (if not already installed)
-   ```bash
-   npm install -g vercel
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
    The API will be available at `http://localhost:3000/api/screenshot`
 
-5. **Test the API locally**
+4. **Test the API locally**
    ```bash
    curl "http://localhost:3000/api/screenshot?url=https://google.com" --output test.png
    ```
+
+   Or open in your browser:
+   ```
+   http://localhost:3000/api/screenshot?url=https://google.com
+   ```
+
+### Alternative: Using Vercel Dev
+
+If you prefer to test with the Vercel runtime:
+
+```bash
+npm install -g vercel
+npm run dev:vercel
+```
+
+On first run, Vercel will ask you to link the project. Choose "Link to existing project" or create a new one.
 
 ### Local vs Production Differences
 
