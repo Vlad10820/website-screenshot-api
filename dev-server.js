@@ -35,10 +35,11 @@ const handler = async (req, res) => {
 
         const vercelRes = {
             status: (code) => {
-                res.writeHead(code, { 'Content-Type': 'application/json' });
+                res.statusCode = code;
                 return vercelRes;
             },
             json: (data) => {
+                res.setHeader('Content-Type', 'application/json');
                 res.end(JSON.stringify(data, null, 2));
             },
             send: (data) => {

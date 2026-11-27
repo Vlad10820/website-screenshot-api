@@ -15,7 +15,7 @@
     "serverless",
     "api"
   ],
-  "author": "",
+  "author": "Vlad Lupașcu",
   "license": "MIT",
   "dependencies": {
     "@sparticuz/chromium": "^119.0.2",
