@@ -91,9 +91,6 @@ export default async function handler(
                 fullPage: false, // Only capture viewport
             });
 
-            // Close the browser
-            await browser.close();
-
             // Set response headers and send the image
             res.setHeader('Content-Type', 'image/png');
             res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate'); // Cache for 24 hours
@@ -101,11 +98,9 @@ export default async function handler(
 
             return res.status(200).send(screenshot);
 
-        } catch (pageError: any) {
-            // Close browser if still open
+        } finally {
+            // Always release Chromium, whether the capture worked or failed
             await browser.close();
-
-            throw pageError;
         }
 
     } catch (error: any) {
